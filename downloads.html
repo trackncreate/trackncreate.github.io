@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads - MIT App Inventor</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #searchBar { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Downloads</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+
+<main>
+  <div class="ad-banner">
+    <img src="https://via.placeholder.com/728x90?text=Banner+Ad" alt="Banner Ad">
+  </div>
+
+  <h2>Available Projects</h2>
+
+  <!-- Search bar -->
+  <input type="text" id="searchBar" placeholder="Search projects...">
+
+  <ul id="projectList">
+    <li><a class="download-btn" href="project1.html">Login Screen Project</a></li>
+    <li><a class="download-btn" href="project2.html">Calculator App Project</a></li>
+    <li><a class="download-btn" href="project3.html">Quiz App Project</a></li>
+    <li><a class="download-btn" href="project4.html">ToDo List App</a></li>
+    <!-- Add more project links here -->
+  </ul>
+
+  <div class="ad-banner">
+    <img src="https://via.placeholder.com/728x90?text=Banner+Ad" alt="Banner Ad">
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 MIT App Inventor Projects</p>
+  <a href="about.html">About</a> | 
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+<script>
+  // Live search filter
+  const searchBar = document.getElementById('searchBar');
+  const projectList = document.getElementById('projectList');
+  const projects = projectList.getElementsByTagName('li');
+
+  searchBar.addEventListener('keyup', function() {
+    const filter = searchBar.value.toLowerCase();
+    for (let i = 0; i < projects.length; i++) {
+      const text = projects[i].textContent.toLowerCase();
+      projects[i].style.display = text.includes(filter) ? '' : 'none';
+    }
+  });
+</script>
+</body>
+</html>
+
