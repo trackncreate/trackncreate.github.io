@@ -5,26 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Downloads - MIT App Inventor</title>
 <link rel="stylesheet" href="style.css">
-
-
 <script src="theme.js"></script>
-
-
 <style>
   #searchBar { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Downloads</h1>
+  <div class="yt-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Icon">
+    <h1>Downloads</h1>
+  </div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="tutorials.html">Tutorials</a>
-    <a href="downloads.html">Downloads</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <button class="mobile-menu-toggle">☰</button>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </nav>
-
 </header>
 
 <main>
@@ -32,18 +33,20 @@
     <img src="https://via.placeholder.com/728x90?text=Banner+Ad" alt="Banner Ad">
   </div>
 
-  <h2>Available Projects</h2>
+  <div class="section-card">
+    <h2>Available Projects</h2>
+    
+    <!-- Search bar -->
+    <input type="text" id="searchBar" placeholder="Search projects...">
 
-  <!-- Search bar -->
-  <input type="text" id="searchBar" placeholder="Search projects...">
-
-  <ul id="projectList">
-    <li><a class="download-btn" href="project1.html">Login Screen Project</a></li>
-    <li><a class="download-btn" href="project2.html">Calculator App Project</a></li>
-    <li><a class="download-btn" href="project3.html">Quiz App Project</a></li>
-    <li><a class="download-btn" href="project4.html">ToDo List App</a></li>
-    <!-- Add more project links here -->
-  </ul>
+    <ul id="projectList">
+      <li><a class="download-btn" href="project1.html">Login Screen Project</a></li>
+      <li><a class="download-btn" href="project2.html">Calculator App Project</a></li>
+      <li><a class="download-btn" href="project3.html">Quiz App Project</a></li>
+      <li><a class="download-btn" href="project4.html">ToDo List App</a></li>
+      <!-- Add more project links here -->
+    </ul>
+  </div>
 
   <div class="ad-banner">
     <img src="https://via.placeholder.com/728x90?text=Banner+Ad" alt="Banner Ad">
@@ -72,4 +75,3 @@
 </script>
 </body>
 </html>
-

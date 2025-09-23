@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About & Contact - MIT App Inventor Projects</title>
 <link rel="stylesheet" href="style.css">
-
-
 <script src="theme.js"></script>
-
-
 <style>
   .contact-form input, .contact-form textarea {
     width: 100%; padding: 10px ; margin-bottom: 10px ; border-radius: 5px; border: 1px solid #ccc;
@@ -24,13 +20,19 @@
 <body>
 
 <header>
-  <h1>About & Contact</h1>
+  <div class="yt-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Icon">
+    <h1>About & Contact</h1>
+  </div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="tutorials.html">Tutorials</a>
-    <a href="downloads.html">Downloads</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <button class="mobile-menu-toggle">☰</button>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </nav>
 </header>
 
@@ -51,13 +53,15 @@
 
   <div class="section-card">
     <h2>Contact Me</h2>
-    <p>If you have questions, suggestions, or collaboration ideas, feel free to reach out using the form below or via email.</p><center>
+    <p>If you have questions, suggestions, or collaboration ideas, feel free to reach out using the form below or via email.</p>
+    <center>
     <form class="contact-form" action="mailto:yourname@example.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
-    </form></center>
+    </form>
+    </center>
   </div>
 
   <div class="ad-banner">
@@ -68,9 +72,8 @@
 <footer>
   <p>© 2025 MIT App Inventor Projects</p>
   <a href="about.html">About</a> | 
-    <a href="privacy.html">Privacy Policy</a>
+  <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 </body>
 </html>
-
