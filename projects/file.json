@@ -1,7 +1,7 @@
 {
   "projectA": [
     { "name": "Source Code (ZIP)", "url": "files/projectA/source.zip" },
-    { "name": "Documentation (PDF)", "url": "files/projectA/docs.pdf" }
+    { "name": "Documentation (TXT)", "url": "files/projectA/test.txt" }
   ],
   "projectB": [
     { "name": "Installer (EXE)", "url": "files/projectB/setup.exe" },
