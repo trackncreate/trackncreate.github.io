@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Downloads</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .file-list a {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      background: #f7f7f7;
+      border-radius: 8px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .file-list a:hover { background: #e8e8e8; }
+  </style>
+</head>
+<body>
+  <h1 id="project-title"></h1>
+  <div class="file-list" id="file-list"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const projectName = params.get("project");
+
+    const titleEl = document.getElementById("project-title");
+    const listEl = document.getElementById("file-list");
+
+    if (!projectName) {
+      titleEl.textContent = "No project selected";
+    } else {
+      fetch("downloads.json")
+        .then(res => res.json())
+        .then(data => {
+          const files = data[projectName];
+          if (!files) {
+            titleEl.textContent = "Project not found";
+            listEl.textContent = "No files available for this project.";
+            return;
+          }
+          titleEl.textContent = `Downloads for ${projectName}`;
+          files.forEach(file => {
+            const a = document.createElement("a");
+            a.href = file.url;
+            a.textContent = file.name;
+            listEl.appendChild(a);
+          });
+        })
+        .catch(err => {
+          titleEl.textContent = "Error loading downloads";
+          listEl.textContent = "Could not fetch download list.";
+          console.error(err);
+        });
+    }
+  </script>
+</body>
+</html>
