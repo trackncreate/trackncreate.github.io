@@ -1,7 +1,7 @@
 {
-  "projectA": [
-    { "name": "Source Code (ZIP)", "url": "files/projectA/source.zip" },
-    { "name": "Documentation (TXT)", "url": "files/projectA/test.txt" }
+  "diary": [
+    { "name": "Project file (.AIA)", "url": "files/dairy/Diary.aia" },
+    { "name": "Android App (.APK)", "url": "files/dairy/Diary.apk" }
   ],
   "projectB": [
     { "name": "Installer (EXE)", "url": "files/projectB/setup.exe" },
