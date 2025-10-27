@@ -3,11 +3,13 @@
     { "name": "Project file (.AIA)", "url": "files/dairy/Diary.aia" },
     { "name": "Android App (.APK)", "url": "files/dairy/Diary.apk" }
   ],
-  "projectB": [
-    { "name": "Installer (EXE)", "url": "files/projectB/setup.exe" },
-    { "name": "Readme (TXT)", "url": "files/projectB/readme.txt" }
+  "python": [
+    { "name": "Project file (.AIA)", "url": "files/python/Python_IDE.aia" },
+    { "name": "Android App (.APK)", "url": "files/python/Python_IDE.apk" },
+    { "name": "Python.html - asset (.HTML)", "url": "files/python/python.html" }
   ],
-  "projectC": [
-    { "name": "APK File", "url": "files/projectC/app.apk" }
+  "theme": [
+    { "name": "Project file (.AIA)", "url": "files/theme/Dark_theme_whole.aia" },
+    { "name": "Android App (.APK)", "url": "files/theme/Dark_theme_whole.apk" }
   ]
 }
