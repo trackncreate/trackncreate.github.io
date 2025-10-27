@@ -1,0 +1,13 @@
+{
+  "projectA": [
+    { "name": "Source Code (ZIP)", "url": "files/projectA/source.zip" },
+    { "name": "Documentation (PDF)", "url": "files/projectA/docs.pdf" }
+  ],
+  "projectB": [
+    { "name": "Installer (EXE)", "url": "files/projectB/setup.exe" },
+    { "name": "Readme (TXT)", "url": "files/projectB/readme.txt" }
+  ],
+  "projectC": [
+    { "name": "APK File", "url": "files/projectC/app.apk" }
+  ]
+}
