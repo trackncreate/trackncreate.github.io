@@ -2,12 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Downloads</title>
   <link rel="stylesheet" href="../../style.css">
+  <script src="theme.js"></script>
 </head>
 <body>
+  <header>
+<div>
+   <button class="mobile-menu-toggle">☰</button>
+   </div>
+  <div class="yt-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Icon">
+    <h1>Download Assets</h1>
+  </div>
+  <nav>
+
+    <div class="nav-container">
+      <a href="../index.html">Home</a>
+      <a href="../tutorials.html">Tutorials</a>
+      <a href="../downloads.html">Downloads</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="section-card">
   <h1 id="project-title"></h1>
   <div class="file-list" id="file-list"></div>
+  </div>
+  
+  <footer>
+  <p>© 2025 MIT App Inventor Projects</p>
+  <a href="../about.html">About</a> | 
+  <a href="../privacy.html">Privacy Policy</a>
+</footer>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -34,7 +65,9 @@
             a.href = file.url;
             a.textContent = file.name;
             a.setAttribute("download", "");
+            a.classList.add("download-btn");
             listEl.appendChild(a);
+            listEl.appendChild(document.createElement("br"));
           });
         })
         .catch(err => {
