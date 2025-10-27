@@ -32,7 +32,7 @@
     if (!projectName) {
       titleEl.textContent = "No project selected";
     } else {
-      fetch("downloads.json")
+      fetch("file.json")
         .then(res => res.json())
         .then(data => {
           const files = data[projectName];
