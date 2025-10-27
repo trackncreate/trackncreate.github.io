@@ -46,6 +46,7 @@
             const a = document.createElement("a");
             a.href = file.url;
             a.textContent = file.name;
+            a.setAttribute("download", "");
             listEl.appendChild(a);
           });
         })
