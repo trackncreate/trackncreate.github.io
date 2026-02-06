@@ -95,7 +95,7 @@ header {
   width: 50px; 
   height: auto; 
   margin-right: 15px; 
-  border-radius: 50%; 
+  border-radius: 0; 
 }
 
 .yt-header h1 { 
