@@ -90,7 +90,13 @@
 
     </ol></p>
   </div>
-
+<div class="discussion-header" style="margin-bottom: 20px;">
+  <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">Discussion Tab</h2>
+  <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">
+    Feel free to comment your feedback, file add requests, doubts, etc.<br>
+    <strong>Remember to comment responsibly, let's make a nice community!!</strong>
+  </p>
+</div>
 <div id="cusdis_thread" class = "section-card fade-in"
   data-host="https://cusdis.com"
   data-app-id="a2c51d62-5324-4abf-8948-56b5d56ea912"
@@ -98,8 +104,29 @@
   data-page-url="{{ PAGE_URL }}"
   data-page-title="{{ PAGE_TITLE }}"
   data-theme="auto"
-> Hello </div>
+></div>
+<style>
+  #cusdis_thread iframe {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+</style>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  // This helps ensure the iframe height adjusts to the content
+  window.CUSDIS_CONFIG = {
+    onRender: function() {
+      const iframe = document.querySelector('#cusdis_thread iframe');
+      if (iframe) {
+        // Simple interval to check for height changes (new comments)
+        setInterval(() => {
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }, 500);
+      }
+    }
+  }
+</script>
 </main>
 
 
