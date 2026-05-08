@@ -400,3 +400,10 @@ footer a {
     left: 15px;
   }
 }
+
+#cusdis_thread iframe {
+  width: 100% !important;
+  aspect-ratio: auto !important; 
+  min-height: 250px;
+  overflow: hidden !important;
+}
