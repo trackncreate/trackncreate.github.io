@@ -105,28 +105,55 @@
   data-page-title="{{ PAGE_TITLE }}"
   data-theme="auto"
 ></div>
-<style>
-  #cusdis_thread iframe {
-    width: 100% !important;
-    overflow: hidden !important;
-  }
-</style>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <script>
-  // This helps ensure the iframe height adjusts to the content
   window.CUSDIS_CONFIG = {
     onRender: function() {
-      const iframe = document.querySelector('#cusdis_thread iframe');
-      if (iframe) {
-        // Simple interval to check for height changes (new comments)
-        setInterval(() => {
-          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        }, 500);
-      }
+      // Small delay to ensure the iframe content is painted
+      setTimeout(() => {
+        const iframe = document.querySelector('#cusdis_thread iframe');
+        if (iframe) {
+            // 1. Remove the internal scrollbar
+            iframe.style.overflow = 'hidden';
+            iframe.scrolling = 'no';
+            
+            // 2. Function to update height
+            const updateHeight = () => {
+              const height = iframe.contentWindow.document.body.scrollHeight;
+              if (height > 0) {
+                iframe.style.height = height + 'px';
+              }
+            };
+
+            // 3. Run immediately and whenever the window resizes
+            updateHeight();
+            window.addEventListener('resize', updateHeight);
+            
+            // 4. MutationObserver to watch for new comments being added
+            const observer = new MutationObserver(updateHeight);
+            observer.observe(iframe.contentWindow.document.body, { 
+              attributes: true, 
+              childList: true, 
+              subtree: true 
+            });
+        }
+      }, 1000);
     }
   }
 </script>
+<style>
+  /* Extra safety: Force the container and iframe to not show scrollbars */
+  #cusdis_thread {
+    overflow: visible !important;
+  }
+  #cusdis_thread iframe {
+    width: 100% !important;
+    border: none !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+</style>
 </main>
 
 
