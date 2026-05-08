@@ -54,7 +54,7 @@
       <a href="downloads.html">Downloads</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="#cusdis_thread">Discussions</a>
+      <a href="#dis_head">Discussions</a>
     </div>
   </nav>
 </header>
@@ -90,14 +90,15 @@
 
     </ol></p>
   </div>
-<div class="discussion-header" style="margin-bottom: 20px;">
+<div class="discussion-header" id ="dis_head" style="margin-bottom: 20px;">
   <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">Discussion Tab</h2>
   <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">
     Feel free to comment your feedback, file add requests, doubts, etc.<br>
     <strong>Remember to comment responsibly, let's make a nice community!!</strong>
   </p>
 </div>
-<div id="cusdis_thread" class = "section-card fade-in"
+
+<div id="cusdis_thread" class="section-card fade-in"
   data-host="https://cusdis.com"
   data-app-id="a2c51d62-5324-4abf-8948-56b5d56ea912"
   data-page-id="{{ PAGE_ID }}"
@@ -105,55 +106,8 @@
   data-page-title="{{ PAGE_TITLE }}"
   data-theme="auto"
 ></div>
+
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-<script>
-  window.CUSDIS_CONFIG = {
-    onRender: function() {
-      // Small delay to ensure the iframe content is painted
-      setTimeout(() => {
-        const iframe = document.querySelector('#cusdis_thread iframe');
-        if (iframe) {
-            // 1. Remove the internal scrollbar
-            iframe.style.overflow = 'hidden';
-            iframe.scrolling = 'no';
-            
-            // 2. Function to update height
-            const updateHeight = () => {
-              const height = iframe.contentWindow.document.body.scrollHeight;
-              if (height > 0) {
-                iframe.style.height = height + 'px';
-              }
-            };
-
-            // 3. Run immediately and whenever the window resizes
-            updateHeight();
-            window.addEventListener('resize', updateHeight);
-            
-            // 4. MutationObserver to watch for new comments being added
-            const observer = new MutationObserver(updateHeight);
-            observer.observe(iframe.contentWindow.document.body, { 
-              attributes: true, 
-              childList: true, 
-              subtree: true 
-            });
-        }
-      }, 1000);
-    }
-  }
-</script>
-<style>
-  /* Extra safety: Force the container and iframe to not show scrollbars */
-  #cusdis_thread {
-    overflow: visible !important;
-  }
-  #cusdis_thread iframe {
-    width: 100% !important;
-    border: none !important;
-    overflow: hidden !important;
-    display: block !important;
-  }
-</style>
 </main>
 
 
