@@ -90,7 +90,7 @@
 
     </ol></p>
   </div>
-<div class="discussion-header" style="margin-bottom: 20px;">
+<div class="discussion-header fade-in" style="margin-bottom: 20px;">
   <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">Discussion Tab</h2>
   <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">
     Feel free to comment your feedback, file add requests, doubts, etc.<br>
@@ -98,7 +98,7 @@
   </p>
 </div>
 
-<div id="cusdis_thread" class="section-card fade-in"
+<div id="cusdis_thread" class="fade-in"
   data-host="https://cusdis.com"
   data-app-id="a2c51d62-5324-4abf-8948-56b5d56ea912"
   data-page-id="{{ PAGE_ID }}"
@@ -110,24 +110,22 @@
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <style>
-  /* Force the DIV container to stretch and wrap the iframe perfectly */
   #cusdis_thread {
-    height: auto !important; 
-    max-height: none !important;
-    min-height: 300px;
     overflow: visible !important;
-    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
   }
-  
-  /* Protect the iframe from your global 16:9 YouTube rule */
+
   #cusdis_thread iframe {
     width: 100% !important;
-    aspect-ratio: auto !important; /* Frees it from the 16:9 mobile lock */
+    height: auto !important;
+    min-height: 800px;
+    aspect-ratio: auto !important;
     display: block !important;
-    border: none !important;
-    /* CRITICAL: Do NOT put any height rules here. We want the Cusdis script to control the iframe's height! */
   }
 </style>
+
 </main>
 
 

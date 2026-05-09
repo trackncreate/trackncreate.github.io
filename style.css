@@ -58,7 +58,7 @@ img{
 p { color: var(--text-secondary); }
 a { color: var(--accent-color); text-decoration: none; transition: color var(--transition-speed); }
 a:hover { color: var(--accent-hover-color); }
-main { max-width: 900px; margin: auto; padding: 20px; }
+main { max-width: 900px; margin: auto; padding: 20px; overflow: visible; }
 
 /* --- Header & Navigation --- */
 header {
@@ -395,6 +395,12 @@ footer a {
     height: auto; 
     aspect-ratio: 16 / 9; 
   }
+  
+   #cusdis_thread iframe {
+  aspect-ratio: auto !important;
+  height: auto !important;
+}
+
 
   .mobile-menu-toggle {
     left: 15px;
