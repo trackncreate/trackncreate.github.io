@@ -54,7 +54,7 @@
       <a href="downloads.html">Downloads</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="#dis_head">Discussions</a>
+      <a href="#cusdis_thread">Discussions</a>
     </div>
   </nav>
 </header>
@@ -90,7 +90,7 @@
 
     </ol></p>
   </div>
-<div class="discussion-header" id ="dis_head" style="margin-bottom: 20px;">
+<div class="discussion-header" style="margin-bottom: 20px;">
   <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">Discussion Tab</h2>
   <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">
     Feel free to comment your feedback, file add requests, doubts, etc.<br>
@@ -108,6 +108,26 @@
 ></div>
 
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<style>
+  /* Force the DIV container to stretch and wrap the iframe perfectly */
+  #cusdis_thread {
+    height: auto !important; 
+    max-height: none !important;
+    min-height: 150px;
+    overflow: visible !important;
+    display: block !important;
+  }
+  
+  /* Protect the iframe from your global 16:9 YouTube rule */
+  #cusdis_thread iframe {
+    width: 100% !important;
+    aspect-ratio: auto !important; /* Frees it from the 16:9 mobile lock */
+    display: block !important;
+    border: none !important;
+    /* CRITICAL: Do NOT put any height rules here. We want the Cusdis script to control the iframe's height! */
+  }
+</style>
 </main>
 
 
